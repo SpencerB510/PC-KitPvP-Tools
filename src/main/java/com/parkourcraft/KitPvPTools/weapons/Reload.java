@@ -8,7 +8,6 @@ import com.parkourcraft.KitPvPTools.Effects;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class Reload extends BukkitRunnable {
-
     private static Map<String, Long> cooldown = new HashMap();
 
     public Reload(Effects effects) {}
