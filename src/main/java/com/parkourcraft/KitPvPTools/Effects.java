@@ -6,15 +6,11 @@ import com.parkourcraft.KitPvPTools.weapons.Cooldown;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
-import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Server;
 import org.bukkit.Sound;
-import org.bukkit.World;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.DragonFireball;
 import org.bukkit.entity.EnderPearl;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.LargeFireball;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.SmallFireball;
@@ -28,27 +24,22 @@ import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitScheduler;
-import org.bukkit.util.Vector;
 
 import java.util.Random;
 
 public class Effects extends JavaPlugin implements Listener {
 
-    Cooldown a;
-    Reload b;
-    BoltAction c;
-    CoolBash d;
-    Shield e;
-    Cool f;
-    LeviCool g;
-    FireCool h;
+    private Cooldown a;
+    private Reload b;
+    private BoltAction c;
+    private CoolBash d;
+    private Shield e;
+    private Cool f;
+    private LeviCool g;
+    private FireCool h;
     public static Effects plugin = null;
 
     public void onEnable() {
@@ -188,8 +179,8 @@ public class Effects extends JavaPlugin implements Listener {
     public static void shootFireballDelayed(Player player, long delayInTicks) {
         Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
             public void run() {
-                Effects.this.launchProjectile(SmallFireball.class);
-                Effects.this.playSound(Effects.this.getLocation(), Sound.ENTITY_BLAZE_SHOOT, 2.0F, 2.0F);
+                player.launchProjectile(SmallFireball.class);
+                player.playSound(player.getLocation(), Sound.ENTITY_BLAZE_SHOOT, 2.0F, 2.0F);
             }
         }, delayInTicks);
     }
