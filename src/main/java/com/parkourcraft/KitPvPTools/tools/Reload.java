@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import com.parkourcraft.KitPvPTools.Effects;
+import com.parkourcraft.KitPvPTools.KitPvPTools;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class Reload extends BukkitRunnable {
     private static Map<String, Long> cooldown = new HashMap();
 
-    public Reload(Effects effects) {}
+    public Reload(KitPvPTools effects) {}
 
     public void run() {
         Iterator<Map.Entry<String, Long>> it = cooldown.entrySet().iterator();

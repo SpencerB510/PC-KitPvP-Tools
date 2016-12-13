@@ -1,71 +1,21 @@
 package com.parkourcraft.KitPvPTools;
 
 import com.parkourcraft.KitPvPTools.tools.*;
-
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Effect;
-import org.bukkit.Material;
-import org.bukkit.Sound;
-import org.bukkit.entity.Arrow;
-import org.bukkit.entity.DragonFireball;
-import org.bukkit.entity.EnderPearl;
-import org.bukkit.entity.LargeFireball;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.SmallFireball;
-import org.bukkit.entity.Snowball;
-import org.bukkit.entity.WitherSkull;
+import org.bukkit.*;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import java.util.Random;
 
-public class Effects extends JavaPlugin implements Listener {
-
-    private Cooldown a;
-    private Reload b;
-    private BoltAction c;
-    private CoolBash d;
-    private Shield e;
-    private Cool f;
-    private LeviCool g;
-    private FireCool h;
-    public static Effects plugin = null;
-
-    public void onEnable() {
-        getServer().getPluginManager().registerEvents(this, this);
-
-        this.a = new Cooldown(this);
-        this.a.runTaskTimer(this, 10L, 10L);
-        this.b = new Reload(this);
-        this.b.runTaskTimer(this, 10L, 10L);
-        this.c = new BoltAction(this);
-        this.c.runTaskTimer(this, 10L, 10L);
-        this.d = new CoolBash(this);
-        this.d.runTaskTimer(this, 10L, 10L);
-        this.e = new Shield(this);
-        this.e.runTaskTimer(this, 10L, 10L);
-        this.f = new Cool(this);
-        this.f.runTaskTimer(this, 10L, 10L);
-        this.g = new LeviCool(this);
-        this.g.runTaskTimer(this, 10L, 10L);
-        this.h = new FireCool(this);
-        this.h.runTaskTimer(this, 10L, 10L);
-        plugin = this;
-    }
-
-    public void onDisable() {
-        plugin = null;
-    }
+public class Events {
 
     @EventHandler
     public void onDragonShadow(PlayerInteractEvent e) {
@@ -176,7 +126,7 @@ public class Effects extends JavaPlugin implements Listener {
     }
 
     public static void shootFireballDelayed(Player player, long delayInTicks) {
-        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+        Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(KitPvPTools.plugin, new Runnable() {
             public void run() {
                 player.launchProjectile(SmallFireball.class);
                 player.playSound(player.getLocation(), Sound.ENTITY_BLAZE_SHOOT, 2.0F, 2.0F);

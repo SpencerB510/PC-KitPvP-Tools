@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import com.parkourcraft.KitPvPTools.Effects;
+import com.parkourcraft.KitPvPTools.KitPvPTools;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class Fangs extends BukkitRunnable {
     private static Map<String, Long> cooldown = new HashMap();
 
-    public Fangs(Effects effects) {}
+    public Fangs(KitPvPTools effects) {}
 
     public void run() {
         Iterator<Map.Entry<String, Long>> it = cooldown.entrySet().iterator();
