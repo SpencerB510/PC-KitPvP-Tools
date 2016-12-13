@@ -4,6 +4,7 @@ import com.parkourcraft.KitPvPTools.tools.*;
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityShootBowEvent;
@@ -15,7 +16,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.util.Random;
 
-public class Events {
+public class Events implements Listener {
 
     @EventHandler
     public void onDragonShadow(PlayerInteractEvent e) {
