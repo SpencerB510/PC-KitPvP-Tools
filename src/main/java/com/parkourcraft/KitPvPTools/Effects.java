@@ -1,8 +1,7 @@
 package com.parkourcraft.KitPvPTools;
 
-import com.parkourcraft.KitPvPTools.weapons.*;
+import com.parkourcraft.KitPvPTools.tools.*;
 
-import com.parkourcraft.KitPvPTools.weapons.Cooldown;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;

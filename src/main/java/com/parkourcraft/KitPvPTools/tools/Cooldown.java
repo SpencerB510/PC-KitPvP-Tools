@@ -1,4 +1,4 @@
-package com.parkourcraft.KitPvPTools.weapons;
+package com.parkourcraft.KitPvPTools.tools;
 
 import java.util.HashMap;
 import java.util.Iterator;
