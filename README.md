@@ -1,1 +1,1 @@
-Spencer's Plugin
+Spencer's Plugin for the Tools and Weapons
