@@ -1,4 +1,4 @@
-package com.parkourcraft.KitPvPTools.configuration.lcoal;
+package com.parkourcraft.KitPvPTools.configuration.local;
 
 
 import java.io.File;

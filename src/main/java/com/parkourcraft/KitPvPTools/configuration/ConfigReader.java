@@ -1,6 +1,6 @@
 package com.parkourcraft.KitPvPTools.configuration;
 
-import com.parkourcraft.KitPvPTools.configuration.lcoal.FileManager;
+import com.parkourcraft.KitPvPTools.configuration.local.FileManager;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 
