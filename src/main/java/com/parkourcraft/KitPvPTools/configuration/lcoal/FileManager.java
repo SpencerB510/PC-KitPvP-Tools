@@ -9,10 +9,10 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.parkourcraft.KitPvPTools.KitPvPTools;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import com.parkourcraft.KitPvPTools.Effects;
 
 public class FileManager {
 
@@ -35,13 +35,13 @@ public class FileManager {
     }
 
     public static void initializeFile(String fileName) {
-        File file = new File(Effects.plugin.getDataFolder(), fileName + ".yml");
+        File file = new File(KitPvPTools.plugin.getDataFolder(), fileName + ".yml");
         FileConfiguration fileConfig = new YamlConfiguration();
 
         try {
             if (!file.exists()) {
                 file.getParentFile().mkdirs();
-                copy(Effects.plugin.getResource(fileName + ".yml"), file);
+                copy(KitPvPTools.plugin.getResource(fileName + ".yml"), file);
             }
         } catch (Exception e) {
             e.printStackTrace();

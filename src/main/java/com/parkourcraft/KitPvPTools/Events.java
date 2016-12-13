@@ -1,5 +1,6 @@
 package com.parkourcraft.KitPvPTools;
 
+import com.parkourcraft.KitPvPTools.configuration.ConfigReader;
 import com.parkourcraft.KitPvPTools.tools.*;
 import org.bukkit.*;
 import org.bukkit.entity.*;
@@ -38,7 +39,7 @@ public class Events implements Listener {
             if ((weapon.getType().equals(Material.COAL)) &&
                     (weapon.getItemMeta().getDisplayName().equals(ChatColor.RED + "" + ChatColor.BOLD + ChatColor.ITALIC + "Bash"))) {
                 if (CoolBash.isonCD(damager.getName())) {
-                    damager.sendMessage(ChatColor.RED + "This ability is on cooldown, try again in a few seconds!");
+                    damager.sendMessage(ConfigReader.getMessage("basic-cooldown", true));
                     e.setCancelled(true);
                     return;
                 }
@@ -62,7 +63,7 @@ public class Events implements Listener {
                     (weapon.getItemMeta().getDisplayName().equals(ChatColor.BLUE + "" + ChatColor.BOLD + ChatColor.ITALIC + "Slam")))
             {
                 if (Shield.isonCD(damager.getName())) {
-                    damager.sendMessage(ChatColor.RED + "This ability is on cooldown, try again in a few seconds!");
+                    damager.sendMessage(ConfigReader.getMessage("basic-cooldown", true));
                     e.setCancelled(true);
                     return;
                 }
@@ -82,7 +83,7 @@ public class Events implements Listener {
                 (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ChatColor.DARK_RED + "" + ChatColor.ITALIC + ChatColor.BOLD + "Levitation")))
         {
             if (LeviCool.isonCD(p.getName())) {
-                p.sendMessage(ChatColor.RED + "This ability is on cooldown, try again in a few seconds!");
+                p.sendMessage(ConfigReader.getMessage("basic-cooldown", true));
                 e.setCancelled(true);
                 return;
             }
@@ -101,7 +102,7 @@ public class Events implements Listener {
                 (p.getInventory().getItemInMainHand().getType().equals(Material.GHAST_TEAR)) &&
                 (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ChatColor.GRAY + "" + ChatColor.BOLD + ChatColor.ITALIC + "Blaster"))) {
             if (Reload.isonCD(p.getName())) {
-                p.sendMessage(ChatColor.RED + "This Ability is on Cooldown try again in a few seconds");
+                p.sendMessage(ConfigReader.getMessage("basic-cooldown", true));
                 e.setCancelled(true);
                 return;
             }
@@ -142,7 +143,7 @@ public class Events implements Listener {
                 (e.getMaterial().equals(Material.BLAZE_ROD)) &&
                 (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ChatColor.DARK_RED + "" + ChatColor.ITALIC + ChatColor.BOLD + "Burst Fire"))) {
             if (FireCool.isonCD(p.getName())) {
-                p.sendMessage(ChatColor.DARK_RED + "This ability is on cooldown, please try again in a few seconds!");
+                p.sendMessage(ConfigReader.getMessage("basic-cooldown", true));
                 e.setCancelled(true);
                 return;
             }
@@ -161,7 +162,7 @@ public class Events implements Listener {
                     (p.getInventory().getItemInMainHand().getType().equals(Material.BOW)) &&
                     (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + ChatColor.ITALIC + "The Wilt"))) {
                 if (Cooldown.isonCD(p.getName())) {
-                    p.sendMessage(ChatColor.RED + "This ability is on cooldown, please try again in a few seconds!");
+                    p.sendMessage(ConfigReader.getMessage("basic-cooldown", true));
                     e.setCancelled(true);
                     return;
                 }
@@ -238,7 +239,7 @@ public class Events implements Listener {
                 (e.getPlayer().getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ChatColor.AQUA + "" + ChatColor.BOLD + ChatColor.ITALIC + "Snip")) &&
                 ((p instanceof Player))) {
             if (BoltAction.isonCD(p.getName())) {
-                p.sendMessage(ChatColor.RED + "Your rifle is reloading, try again in a few seconds!");
+                p.sendMessage(ConfigReader.getMessage("rifle-reload-cooldown", true));
                 e.setCancelled(true);
                 return;
             }
@@ -271,7 +272,7 @@ public class Events implements Listener {
             if ((damager.getInventory().getItemInMainHand().getType().equals(Material.QUARTZ)) &&
                     (damager.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ChatColor.DARK_GRAY + "" + ChatColor.BOLD + ChatColor.ITALIC + "Fangs"))) {
                 if (Fangs.isonCD(damager.getName())) {
-                    damager.sendMessage(ChatColor.DARK_RED + "This ability is on cooldown, Try again in a few seconds.");
+                    damager.sendMessage(ConfigReader.getMessage("basic-cooldown", true));
                     e.setCancelled(true);
                     return;
                 }
